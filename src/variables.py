@@ -31,7 +31,7 @@ def load_params():
         N[k] = int(row.iloc[12])
         Range[k] = float(row.iloc[13])
         U[k] = float(row.iloc[14])
-        S[k] = float(row.iloc[20])
+        S[k] = float(row.iloc[22])
 
     # Original aircraft assignments
     x0 = {}
@@ -43,7 +43,7 @@ def load_params():
             x0[r, k] = int(row.iloc[3 + i])
 
     # Passenger demand from column AY
-    D = dict(zip(R, summary.iloc[:, 50].astype(float)))
+    D = dict(zip(R, summary.iloc[:, 52].astype(float)))
 
     # Flight time, operating cost and CO2 emissions
     T = {}
@@ -69,6 +69,13 @@ def load_params():
         for k in K
     )
 
+    # Baseline cost of the current assignment
+    cost_base = sum(
+        x0[r, k] * c[r, k]
+        for r in R
+        for k in K
+    )
+
     return {
         "R": R,
         "K": K,
@@ -82,7 +89,9 @@ def load_params():
         "T": T,
         "c": c,
         "E": E,
-        "E_base": E_base
+        "E_base": E_base,
+        "x0": x0,
+        "cost_base": cost_base
     }
 
 

@@ -7,6 +7,8 @@ from gurobipy import GRB
 def solve(p, alpha):
     R, K = p["R"], p["K"]
     m = gp.Model("fleet_assignment")
+    m.Params.OutputFlag = 0
+    m.Params.DualReductions = 0
 
     # Decision variable: x[r,k] = number of round trips on route r by aircraft type k
     x = m.addVars(R, K, vtype=GRB.INTEGER, lb=0, name="x")

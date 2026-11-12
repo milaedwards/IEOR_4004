@@ -10,7 +10,7 @@ def load_params():
     costs = pd.read_csv(data_folder / "route_costs.csv", skiprows=2)
 
     # Routes and aircraft types
-    summary = summary[summary["route (r)"].str.startswith("JFK-")].copy()
+    summary = summary[summary["route (r)"].str.startswith("JFK-", na=False)].copy()
 
     R = summary["route (r)"].tolist()
     K = ["A220-300", "A320", "A321", "A321neo"]

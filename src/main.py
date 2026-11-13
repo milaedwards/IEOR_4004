@@ -1,4 +1,4 @@
-# runs baseline check and the alpha sweep, then saves to results
+# runs baseline check and the alpha sweep
 
 from gurobipy import GRB
 from variables import load_params

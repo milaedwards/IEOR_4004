@@ -32,3 +32,5 @@ python src/main.py
 
 Current: cost = $4,024,633, CO2 = 5,619,090 kg, then one block per alpha.
 alpha = 2.5% and 3.0% are infeasible with the current fleet.
+
+Writes the full assignment for every alpha to results/assignments.csv.

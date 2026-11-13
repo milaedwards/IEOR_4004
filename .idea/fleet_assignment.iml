@@ -4,7 +4,7 @@
     <content url="file://$MODULE_DIR$/../fleet_assignment">
       <excludeFolder url="file://$MODULE_DIR$/../fleet_assignment/.venv" />
     </content>
-    <orderEntry type="jdk" jdkName="~/PycharmProjects/IEOR_4004/.venv" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="~/PycharmProjects/fleet_assignment/.venv" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PackageRequirementsSettings" />
